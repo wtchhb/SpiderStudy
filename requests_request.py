@@ -15,6 +15,11 @@ def download(url: str)-> str:
     if resp.status_code == 200:
         return resp.text    #文本，resp.content 字节码
     return '下载失败'
+url1 = 'https://chengdu.anjuke.com/community/'
+resp1 = requests.get(url1, params={'form': 'esf_list_navigation'})
+rep = ';'.join(['%s=%s' %(cookie.name, cookie.value) for cookie in resp1.cookies]) #'aQQ_ajkguid=7290271E-62EA-6336-89B4-8054801545F8;twe=2'
+
 
 ret = download(url)
 print(ret)
+
