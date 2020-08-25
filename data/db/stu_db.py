@@ -14,4 +14,4 @@ class StuDao(BaseDao):
 if __name__ == "__main__":
     dao = StuDao()
     print(dao.query(where=' where sex=%s', args=('男',)))
-    print(dao.query(where=' where sex=%(sex)s', args=('男',)))
+    print(dao.query(where=' where sex=%(sex)s', args={'sex': '男'}))
