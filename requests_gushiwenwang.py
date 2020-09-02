@@ -32,4 +32,4 @@ def get(url):
         raise Exception('请求失败!')
 
 if __name__ == '__main__':
-    get("https://www.gushiwen.org/")
+    get("https://www.gushiwen.cn/")
