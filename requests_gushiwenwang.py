@@ -36,7 +36,6 @@ header_fields = ('id', 'name', 'author', 'content', 'tags')
 
 
 def itempipeline4csv(item):
-    print(item)
     global has_header
     with open('dushuwang.csv', 'a', encoding='utf-8') as f:
         writer = DictWriter(f, fieldnames=header_fields)
