@@ -13,7 +13,7 @@ class BaseDao:
         with self.conn as c:
             if args:
                     #args 可以是tuple, 与sql中的%s对应
-                    #   可以是dict，与sql中的%(xxx)s  对应
+                    #可以是dict，与sql中的%(xxx)s  对应
                 c.execute(sql, args)
             else:
                 c.execute(sql)

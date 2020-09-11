@@ -22,7 +22,9 @@ def itempipeline(item):
     # values占位字符串： %(id)s, %(name)s, %(author)s, %(content)s,%(tags)s
     sql = 'insert into dushuwang(%s) values(%s)'
     fields = ','.join(item.keys())
+    print(fields)
     value_placeholds = ','.join(['%%(%s)s' % key for key in item])
+    print(value_placeholds)
 
     with conn as c:
         try:
