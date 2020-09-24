@@ -18,22 +18,28 @@ headers = {
 
 
 class DownloadThread(Thread):
-    def __init__(self, url):
+    def __init__(self, task_queue, result_queue):
         super().__init__()
-        self.url = url
-        self.content = None
+        self.task_queue: TQueue = task_queue  # 线程队列
+        self.result_queue: Queue = result_queue  # 进程队列
 
     def run(self):
-        print('开始下载', self.url)
-        resp = requests.get(self.url, headers=headers)
+        while True:
+            try:
+                url = self.task_queue.get(timeout=10)
+                content = self.get(url)
+                self.result_queue.put((url, content))
+            except:
+                break
+
+    def get(self, url):
+        print('开始下载', url)
+        resp = requests.get(url, headers=headers)
         if resp.status_code == 200:
             resp.encoding = 'utf-8'
-            self.content = resp.text
 
-        print(self.url, '下载完成')
-
-    def get_content(self):
-        return self.content
+        print(url, '下载完成')
+        return resp.text
 
 
 class DownloadProcess(Process):
@@ -46,23 +52,26 @@ class DownloadProcess(Process):
         self.html_q = html_q
         super().__init__()
 
+        # 用户于进程内部的多个线程之间的通信队列
+        self.task_queue = TQueue()
+
     def run(self):
+        # 启动子线程下载任务
+        ts = [DownloadThread(self.task_queue, self.html_q)
+              for i in range(2)]
+
+        for t in ts:
+            t.start()
+
         while True:
             try:
-                url = self.url_q.get(timeout=30)
-                # 启动子线程下载任务
-                t = DownloadThread(url)
-                t.start()
-                t.join()
-
-                # 获取下载的数据
-                html = t.get_content()
-
-                # 将数据压入到解析队列中
-                self.html_q.put((url, html))
+                url = self.url_q.get(timeout=30) # 主进程，用于进程间通信
+                self.task_queue.put(url)  # 当前进程， 用于线程间通信
             except:
                 break
 
+        for t in ts:
+            t.join()
         print('--下载进程 Over--')
 
 
