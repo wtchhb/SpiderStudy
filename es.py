@@ -95,6 +95,7 @@ class ESIndex():
                     datas.append(data)
         return datas
 
+
 if __name__ == '__main__':
     index = ESIndex('gushiwen', 'tuijian')
     index.create()
