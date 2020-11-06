@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.http import Response, HtmlResponse
+from scrapy.selector import SelectorList, Selector
 
 
 class WanbenSpider(scrapy.Spider):
