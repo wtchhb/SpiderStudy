@@ -65,7 +65,8 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'qidian.pipelines.QidianPipeline': 300,
+   'qidian.pipelines.CSVPipeline': 500,  # 值小的优先级高
+   'qidian.pipelines.DBPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

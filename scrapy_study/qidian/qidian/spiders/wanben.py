@@ -10,7 +10,7 @@ from qidian.items import *
 
 class WanbenSpider(scrapy.Spider):
     name = 'wanben'
-    allowed_domains = ['www.qidian.com', 'book.qidian.com']
+    allowed_domains = ['qidian.com', 'book.qidian.com']
     start_urls = ['https://www.qidian.com/finish']
 
     def parse(self, response: Response):
@@ -33,7 +33,7 @@ class WanbenSpider(scrapy.Spider):
                 yield item
 
                 # 请求小说的详情
-                yield Request('https://' + item['book_url'], callback=self.parse_info, priority=1, meta={'book_id': item['book_id']})
+                yield Request('https://' + item['book_url'], callback=self.parse_info, priority=10, meta={'book_id': item['book_id']})
 
             # 找出下一页
             next_url = response.css('.lbf-pagination-item-list').xpath('./li[last()]/a/@href').get()
@@ -45,4 +45,26 @@ class WanbenSpider(scrapy.Spider):
         # print(response.body)
 
     def parse_info(self, response: Response):
-        print('-----------------解析小说的详情页面-----------------', response.meta['book_id'])
+        book_id = response.meta['book_id']
+        seg_as = response.xpath('//div[@class="volume-wrap"]/div[position()>1]').css('.cf li>a')
+        for a in seg_as:
+            # a -> Selector
+            item = SegItem()
+
+            item['book_id'] = book_id
+            item['seg_id'] = uuid.uuid4().hex
+            item['title'] = a.css('::text').get()
+            item['url'] = 'https://' + a.css('::attr("href")').get()
+            # seg_url = a.xpath('./@href').get()
+
+            yield item
+
+            # 下载章节内容
+            yield Request(item['url'], callback=self.parse_seg, priority=1, meta={'seg_id': item['seg_id']})
+
+    def parse_seg(self, response):
+        """章节内容"""
+        item = SegDetailItem()
+        item['seg_id'] = response.meta['seg_id']
+        contents = '<br>'.json(response.css('.read-content p::text').extract())
+        item['content'] = contents.replace('\u3000', '').replace('\n', '')

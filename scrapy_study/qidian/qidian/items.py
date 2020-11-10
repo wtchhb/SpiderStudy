@@ -24,18 +24,13 @@ class BookItem(scrapy.Item):
     summary = scrapy.Field()
 
 
-class JuanItem(scrapy.Item):
-    juan_id = scrapy.Field()  # 卷ID
-    title = scrapy.Field()
-    book_id = scrapy.Field()
-
-
 class SegItem(scrapy.Item):
     seg_id = scrapy.Field()  # 章节ID
     title = scrapy.Field()
-    juan_id = scrapy.Field()
+    url = scrapy.Field()
+    book_id = scrapy.Field()
 
 
 class SegDetailItem(scrapy.Item):
     seg_id = scrapy.Field()  # 章节ID
-    text = scrapy.Field()  # 内容
+    content = scrapy.Field()  # 内容
