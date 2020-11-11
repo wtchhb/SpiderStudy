@@ -5,7 +5,7 @@ import scrapy
 class ShiwenSpider(scrapy.Spider):
     name = 'shiwen'
     allowed_domains = ['gushiwen.org']
-    start_urls = ['http://gushiwen.org/']
+    start_urls = ['https://so.gushiwen.cn/user/collect.aspx']
 
     def parse(self, response):
         pass

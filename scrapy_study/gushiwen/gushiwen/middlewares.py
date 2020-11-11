@@ -7,6 +7,8 @@
 
 from scrapy import signals
 
+from gushiwen.cookies_ import get_cookie
+
 
 class GushiwenSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
@@ -71,6 +73,9 @@ class GushiwenDownloaderMiddleware(object):
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
         # middleware.
+
+        # 设置请求的cookies信息
+        request.cookies = get_cookie()
 
         # Must either:
         # - return None: continue processing this request
