@@ -24,9 +24,9 @@ class BookSpider(CrawlSpider):
         item['name'] = response.css('h1::text').get()
 
         # 使用ImagePipeline下载图片时，需要使用image_urls字段，是可迭代的list/tuple类型
-        item['image_urls'] = response.css('.pic img::attr("src")').extract()
+        item['cover'] = response.css('.pic img::attr("src")').get()
         # 下载图片之后，保存本地的文件位置
-        item['images'] = []
+        # item['images'] = []
         item['price'] = response.css('.num::text').get()
         table = response.css('#ct100_c1_bookleft table')
         item['author'] = table.xpath('.//tr[1]/td[2]/text()').get()

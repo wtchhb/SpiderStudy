@@ -68,12 +68,17 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'dushu.pipelines.DushuPipeline': 300,
-    'scrapy.pipelines.images.ImagesPipeline': 301,
+    # 'scrapy.pipelines.images.ImagesPipeline': 301,
+    'dushu.pipelines.BookImagesPipeline': 301,
 }
 
-# 配置图片管道的相关钻参数
+# 配置图片管道的相关的参数
 BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
 IMAGES_STORE = os.path.join(BASE_DIR, 'Images')
+IMAGES_THUMBS = {
+    'small': (60, 32),
+    'big': (120, 80)
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
