@@ -9,6 +9,7 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 import os
+import logging
 
 BOT_NAME = 'dushu'
 
@@ -48,9 +49,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'dushu.middlewares.DushuSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'dushu.middlewares.DushuSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -75,10 +76,26 @@ ITEM_PIPELINES = {
 # 配置图片管道的相关的参数
 BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
 IMAGES_STORE = os.path.join(BASE_DIR, 'Images')
-IMAGES_THUMBS = {
-    'small': (60, 32),
-    'big': (120, 80)
-}
+# IMAGES_THUMBS = {
+#     'small': (60, 32),
+#     'big': (120, 80)
+# }
+
+LOG_LEVEL ='INFO'
+LOG_FILE = 'dushu.log'
+
+error_logger = logging.getLogger('dushu-project')
+error_logger.setLevel(logging.ERROR)
+handler = logging.FileHandler(
+    os.path.join(BASE_DIR, 'error.log'),
+    encoding='utf-8'
+)
+handler.setLevel(logging.ERROR)
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s %(name)s at %(lineno)s of %(pathname)s : %(message)s'
+))
+error_logger.addHandler(handler)
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

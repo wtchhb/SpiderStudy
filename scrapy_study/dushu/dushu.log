@@ -1,0 +1,157 @@
+2020-11-16 14:57:53 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: dushu)
+2020-11-16 14:57:53 [scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 3.1, Platform Windows-10-10.0.18362-SP0
+2020-11-16 14:57:53 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'dushu', 'FEED_FORMAT': 'csv', 'FEED_URI': 'boo.csv', 'LOG_FILE': 'dushu.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'dushu.spiders', 'SPIDER_MODULES': ['dushu.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+2020-11-16 14:57:53 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2020-11-16 14:57:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-11-16 14:57:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'dushu.middlewares.DushuSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-11-16 14:57:54 [scrapy.middleware] INFO: Enabled item pipelines:
+['dushu.pipelines.DushuPipeline', 'dushu.pipelines.BookImagesPipeline']
+2020-11-16 14:57:54 [scrapy.core.engine] INFO: Spider opened
+2020-11-16 14:57:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-11-16 14:57:54 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method DushuSpiderMiddleware.spider_opened of <dushu.middlewares.DushuSpiderMiddleware object at 0x00000172A09BB908>>
+Traceback (most recent call last):
+  File "c:\users\edz\appdata\local\programs\python\python37\lib\site-packages\twisted\internet\defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "c:\users\edz\appdata\local\programs\python\python37\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "F:\SpiderStudy\scrapy_study\dushu\dushu\middlewares.py", line 63, in spider_opened
+    with open(log_file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'F:\\SpiderStudy\\scrapy_study\\dushu\\dushu\\dushu.log'
+2020-11-16 14:57:55 [book] INFO: {'name': '图腾分析路径下中国五帝文明研究', 'cover': 'https://img.dushu.com/2020/11/13/11155768991808.jpg_200.jpg', 'price': '¥108.00', 'author': None, 'publisher': None, 'isbn': '9787520352918', 'publish_date': '2019-12-01', 'page': '347'}
+2020-11-16 14:57:56 [book] INFO: {'name': '消息写作原理', 'cover': 'https://img.dushu.com/2020/11/13/11215152598095.jpg_200.jpg', 'price': '¥68.00', 'author': None, 'publisher': None, 'isbn': '9787549121229', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:57:56 [book] INFO: {'name': '河北传媒发展报告（2020）', 'cover': 'https://img.dushu.com/2020/11/13/11215052655564.jpg_200.jpg', 'price': '¥128.00', 'author': None, 'publisher': None, 'isbn': '9787520164788', 'publish_date': '2020-06-01', 'page': '360'}
+2020-11-16 14:57:56 [book] INFO: {'name': '天空历险记（共4册）', 'cover': 'https://img.dushu.com/2020/11/13/1121525164746.jpg_200.jpg', 'price': '¥196.00', 'author': None, 'publisher': None, 'isbn': '9787548940616', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:57:56 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:56 [book] INFO: {'name': '众声喧哗的下半场：新媒体时代公共舆论理性表达的话语建构', 'cover': 'https://img.dushu.com/2020/11/13/11215469075525.jpg_200.jpg', 'price': '¥35.00', 'author': None, 'publisher': None, 'isbn': '9787517838166', 'publish_date': '2020-06-01', 'page': '233'}
+2020-11-16 14:57:56 [book] INFO: {'name': '播音主持综合训练教程新编', 'cover': 'https://img.dushu.com/2020/11/13/11215587739652.jpg_200.jpg', 'price': '¥49.00', 'author': None, 'publisher': None, 'isbn': '9787565726644', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:57:56 [book] INFO: {'name': '版权管理体制改革研究', 'cover': 'https://img.dushu.com/2020/11/13/11215688765821.jpg_200.jpg', 'price': '¥69.00', 'author': None, 'publisher': None, 'isbn': '9787565727054', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:57:56 [book] INFO: {'name': '2019年外文学术图书引证报告', 'cover': 'https://img.dushu.com/2020/11/13/11220081161029.jpg_200.jpg', 'price': '¥68.00', 'author': None, 'publisher': None, 'isbn': '9787313228109', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:57:56 [book] INFO: {'name': '江苏法治蓝皮书：江苏法治发展报告No.7（2018-2019）', 'cover': 'https://img.dushu.com/2020/11/13/11070681037941.jpg_200.jpg', 'price': '¥138.00', 'author': None, 'publisher': None, 'isbn': '9787520165068', 'publish_date': '2020-04-01', 'page': '284'}
+2020-11-16 14:57:56 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:56 [book] INFO: {'name': '2019年美国侵犯人权报告（汉西）', 'cover': 'https://img.dushu.com/2020/11/13/11175165820871.jpg_200.jpg', 'price': '¥30.00', 'author': None, 'publisher': None, 'isbn': '9787508544298', 'publish_date': '2020-03-01', 'page': '94'}
+2020-11-16 14:57:56 [book] INFO: {'name': '会飞的青蛙', 'cover': 'https://img.dushu.com/2020/11/13/11112788813559.jpg_200.jpg', 'price': '¥42.80', 'author': None, 'publisher': None, 'isbn': '9787545073645', 'publish_date': '2020-04-01', 'page': None}
+2020-11-16 14:57:56 [book] INFO: {'name': '冷空', 'cover': 'https://img.dushu.com/2020/11/12/09493594391709.jpg_200.jpg', 'price': '¥46.00', 'author': None, 'publisher': None, 'isbn': '9787530678435', 'publish_date': '2019-12-01', 'page': '220'}
+2020-11-16 14:57:57 [book] INFO: {'name': '输配电线路高处作业装备应用指南', 'cover': 'https://img.dushu.com/2020/11/13/11193124127665.jpg_200.jpg', 'price': '¥26.00', 'author': None, 'publisher': None, 'isbn': '9787519845926', 'publish_date': '2020-06-01', 'page': '176'}
+2020-11-16 14:57:58 [book] INFO: {'name': '单小历2020-2021 新版 儿童卡片图书', 'cover': 'https://img.dushu.com/2020/11/13/105549106873.jpg_200.jpg', 'price': '¥168.00', 'author': None, 'publisher': None, 'isbn': '9787559641113', 'publish_date': '2020-05-01', 'page': None}
+2020-11-16 14:57:58 [book] INFO: {'name': '听歌放酒狂', 'cover': 'https://img.dushu.com/2020/11/13/10553778997913.jpg_200.jpg', 'price': '¥59.00', 'author': None, 'publisher': None, 'isbn': '9787308200691', 'publish_date': '2020-05-01', 'page': '300'}
+2020-11-16 14:57:58 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:58 [book] INFO: {'name': '汪曾祺经典：耳目所接皆是水（精装双封面）', 'cover': 'https://img.dushu.com/2020/11/13/1054336076549.jpg_200.jpg', 'price': '¥39.80', 'author': None, 'publisher': None, 'isbn': '9787544781619', 'publish_date': '2020-07-01', 'page': '216'}
+2020-11-16 14:57:58 [book] INFO: {'name': '汪曾祺经典：水乡散淡且悠远（精装双封面）', 'cover': 'https://img.dushu.com/2020/11/13/10543153746568.jpg_200.jpg', 'price': '¥39.80', 'author': None, 'publisher': None, 'isbn': '9787544781596', 'publish_date': '2020-07-01', 'page': '256'}
+2020-11-16 14:57:58 [book] INFO: {'name': '汪曾祺经典：万物静观皆有灵（精装双封面）', 'cover': 'https://img.dushu.com/2020/11/13/1054325608618.jpg_200.jpg', 'price': '¥42.80', 'author': None, 'publisher': None, 'isbn': '9787544781589', 'publish_date': '2020-07-01', 'page': '280'}
+2020-11-16 14:57:58 [book] INFO: {'name': '汪曾祺经典：师友故人忆念中（精装双封面）', 'cover': 'https://img.dushu.com/2020/11/13/10543057959436.jpg_200.jpg', 'price': '¥42.80', 'author': None, 'publisher': None, 'isbn': '9787544781572', 'publish_date': '2020-07-01', 'page': '252'}
+2020-11-16 14:57:58 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:58 [book] INFO: {'name': '美丽中国经典线路2019', 'cover': 'https://img.dushu.com/2020/10/27/09550018649272.jpg_200.jpg', 'price': '¥58.00', 'author': None, 'publisher': None, 'isbn': '9787503263507', 'publish_date': '2019-12-01', 'page': '326'}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '澳大利亚法庭口译国家标准指南全国统一', 'cover': 'https://img.dushu.com/2020/11/13/10425369945353.jpg_200.jpg', 'price': '¥56.00', 'author': None, 'publisher': None, 'isbn': '9787300280141', 'publish_date': '2020-04-01', 'page': '270'}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '大学跨文化英语综合教程2教师用书（一书一码）', 'cover': 'https://a.dushu.com/img/n200.png', 'price': '¥39.00', 'author': None, 'publisher': None, 'isbn': '9787544656122', 'publish_date': '2019-06-01', 'page': None}
+2020-11-16 14:57:59 [book] INFO: {'name': '华语阅读金字塔 7级 1.公共交通', 'cover': 'https://img.dushu.com/2020/11/13/10361059158513.jpg_200.jpg', 'price': '¥14.90', 'author': None, 'publisher': None, 'isbn': '9787513819329', 'publish_date': '2020-01-01', 'page': '21'}
+2020-11-16 14:57:59 [book] INFO: {'name': '大学跨文化英语综合教程2学生用书（一书一码）', 'cover': 'https://img.dushu.com/2020/11/13/10425987986257.jpg_200.jpg', 'price': '¥49.00', 'author': None, 'publisher': None, 'isbn': '9787544656115', 'publish_date': '2019-06-01', 'page': None}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '你为什么没朋友', 'cover': 'https://img.dushu.com/2020/10/29/10091655524069.jpg_200.jpg', 'price': '¥18.00', 'author': None, 'publisher': None, 'isbn': '9787513325462', 'publish_date': '2018-01-01', 'page': None}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '走遍中国（练习册 第一册 国内版）', 'cover': 'https://img.dushu.com/2020/11/13/1036115861044.jpg_200.jpg', 'price': '¥58.00', 'author': None, 'publisher': None, 'isbn': '9787521314458', 'publish_date': '2020-01-01', 'page': '111'}
+2020-11-16 14:57:59 [book] INFO: {'name': '华语阅读金字塔 6级（套装）', 'cover': 'https://img.dushu.com/2020/11/13/10361275645653.jpg_200.jpg', 'price': '¥149.00', 'author': None, 'publisher': None, 'isbn': '9787513819152', 'publish_date': '2020-01-01', 'page': None}
+2020-11-16 14:57:59 [book] INFO: {'name': '注册电气工程师专业考试历年真题解析（发输变电专业 2020年版）', 'cover': 'https://img.dushu.com/2020/11/13/10365981583667.jpg_200.jpg', 'price': '¥260.00', 'author': None, 'publisher': None, 'isbn': '9787519845735', 'publish_date': '2020-07-01', 'page': '1152'}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '新材料', 'cover': 'https://img.dushu.com/2020/11/12/09523761996877.jpg_200.jpg', 'price': '¥48.00', 'author': None, 'publisher': None, 'isbn': '9787534595158', 'publish_date': '2019-12-01', 'page': '134'}
+2020-11-16 14:57:59 [book] INFO: {'name': '物联网', 'cover': 'https://img.dushu.com/2020/11/12/09523642132750.jpg_200.jpg', 'price': '¥48.00', 'author': None, 'publisher': None, 'isbn': '9787571306588', 'publish_date': '2020-01-01', 'page': '138'}
+2020-11-16 14:57:59 [dushu-project] ERROR: hahaha
+2020-11-16 14:57:59 [book] INFO: {'name': '目标选择：阅读体验中的语言信息加工', 'cover': 'https://img.dushu.com/2020/11/13/1037027565243.jpg_200.jpg', 'price': '¥25.00', 'author': None, 'publisher': None, 'isbn': '9787112245765', 'publish_date': '2020-06-01', 'page': None}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '0.4kV电缆分支箱抽检工作规范', 'cover': 'https://img.dushu.com/2020/11/12/09535833861771.jpg_200.jpg', 'price': '¥20.00', 'author': None, 'publisher': None, 'isbn': '9787519835590', 'publish_date': '2019-09-01', 'page': None}
+2020-11-16 14:58:00 [book] INFO: {'name': '2021 管理类联考 老吕数学母题800练（第6版）', 'cover': 'https://img.dushu.com/2020/11/12/09483245726845.jpg_200.jpg', 'price': '¥69.80', 'author': None, 'publisher': None, 'isbn': '9787568281294', 'publish_date': '2020-03-01', 'page': None}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '学在中国.实践教程（2）', 'cover': 'https://img.dushu.com/2020/11/13/10354441566981.jpg_200.jpg', 'price': '¥58.00', 'author': None, 'publisher': None, 'isbn': '9787521315448', 'publish_date': '2020-04-01', 'page': '224'}
+2020-11-16 14:58:00 [book] INFO: {'name': '房地产审判实务研究', 'cover': 'https://a.dushu.com/img/n200.png', 'price': '¥58.00', 'author': None, 'publisher': None, 'isbn': '9787517134459', 'publish_date': '2020-03-01', 'page': '334'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '精神分析式对话：从心理医院到躺椅', 'cover': 'https://img.dushu.com/2020/11/12/09505926157367.jpg_200.jpg', 'price': '¥49.00', 'author': None, 'publisher': None, 'isbn': '9787568920148', 'publish_date': '2020-04-01', 'page': '262'}
+2020-11-16 14:58:00 [book] INFO: {'name': '追寻生命的智慧', 'cover': 'https://img.dushu.com/2020/11/12/09510029819417.jpg_200.jpg', 'price': '¥59.80', 'author': None, 'publisher': None, 'isbn': '9787519272975', 'publish_date': '2020-05-01', 'page': '260'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '精编外科学治疗新进展', 'cover': 'https://img.dushu.com/2020/11/12/09365890375907.jpg_200.jpg', 'price': '¥68.00', 'author': None, 'publisher': None, 'isbn': '9787518961948', 'publish_date': '2019-12-01', 'page': '207'}
+2020-11-16 14:58:00 [book] INFO: {'name': '单片微型计算机原理与接口技术：基于STC15W4K32S4单片机', 'cover': 'https://a.dushu.com/img/n200.png', 'price': '¥65.00', 'author': None, 'publisher': None, 'isbn': '9787564644956', 'publish_date': '2019-07-01', 'page': None}
+2020-11-16 14:58:00 [book] INFO: {'name': '用Proteus可视化设计玩转Arduino', 'cover': 'https://img.dushu.com/2020/11/12/09514319989713.jpg_200.jpg', 'price': '¥69.80', 'author': None, 'publisher': None, 'isbn': '9787121389436', 'publish_date': '2020-05-01', 'page': '244'}
+2020-11-16 14:58:00 [book] INFO: {'name': '企业社会责任内部控制研究', 'cover': 'https://img.dushu.com/2020/11/12/09523542890218.jpg_200.jpg', 'price': '¥78.00', 'author': None, 'publisher': None, 'isbn': '9787550432987', 'publish_date': '2019-09-01', 'page': None}
+2020-11-16 14:58:00 [book] INFO: {'name': '假肢矫形器技术与临床应用', 'cover': 'https://img.dushu.com/2020/11/12/09370456759664.jpg_200.jpg', 'price': '¥268.00', 'author': None, 'publisher': None, 'isbn': '9787121355530', 'publish_date': '2020-04-01', 'page': '552'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '解读《药品生产监督管理办法》', 'cover': 'https://img.dushu.com/2020/11/13/0940304889138.jpg_200.jpg', 'price': '¥58.00', 'author': None, 'publisher': None, 'isbn': '9787521418064', 'publish_date': '2020-05-01', 'page': '116'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '重症疾病药物治疗的药学监护', 'cover': 'https://img.dushu.com/2020/11/13/09403349672613.jpg_200.jpg', 'price': '¥49.00', 'author': None, 'publisher': None, 'isbn': '9787117293150', 'publish_date': '2020-05-01', 'page': '256'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [book] INFO: {'name': '柱上开关设备抽检工作规范', 'cover': 'https://img.dushu.com/2020/11/12/09540036466352.jpg_200.jpg', 'price': '¥16.00', 'author': None, 'publisher': None, 'isbn': '9787519835576', 'publish_date': '2019-09-01', 'page': None}
+2020-11-16 14:58:00 [book] INFO: {'name': '数据科学入门：基于Python语言（第2版影印版 英文版）', 'cover': 'https://img.dushu.com/2020/11/12/09551919976499.jpg_200.jpg', 'price': '¥118.00', 'author': None, 'publisher': None, 'isbn': '9787564188269', 'publish_date': '2020-05-01', 'page': '384'}
+2020-11-16 14:58:00 [book] INFO: {'name': 'Apache Spark流处理（影印版 英文版）', 'cover': 'https://img.dushu.com/2020/11/12/09552036768866.jpg_200.jpg', 'price': '¥120.00', 'author': None, 'publisher': None, 'isbn': '9787564188238', 'publish_date': '2020-05-01', 'page': '424'}
+2020-11-16 14:58:00 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:00 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-11-16 14:58:01 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2020-11-16 14:58:01 [book] INFO: {'name': '山海经（套装共4册）', 'cover': 'https://img.dushu.com/2020/11/12/09581773987876.jpg_200.jpg', 'price': '¥696.00', 'author': None, 'publisher': None, 'isbn': '9787545131178', 'publish_date': '2014-06-01', 'page': None}
+2020-11-16 14:58:01 [book] INFO: {'name': '跨大西洋数据保护实践', 'cover': 'https://img.dushu.com/2020/11/12/09595581230872.jpg_200.jpg', 'price': '¥35.00', 'author': None, 'publisher': None, 'isbn': '9787516221570', 'publish_date': '2020-04-01', 'page': None}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [book] INFO: {'name': '金牌月嫂手把手教你做月子餐', 'cover': 'https://img.dushu.com/2020/11/12/10022447496623.jpg_200.jpg', 'price': '¥49.80', 'author': None, 'publisher': None, 'isbn': '9787518063031', 'publish_date': '2020-04-01', 'page': '192'}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [book] INFO: {'name': '全国社会工作者职业水平考试真题解析与押题试卷（中级）', 'cover': 'https://img.dushu.com/2020/11/12/1003035752027.jpg_200.jpg', 'price': '¥98.00', 'author': None, 'publisher': None, 'isbn': '9787504771346', 'publish_date': '2020-04-01', 'page': None}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [book] INFO: {'name': '环境影响评价技术导则与标准（2020年版）', 'cover': 'https://img.dushu.com/2020/11/12/10030563626127.jpg_200.jpg', 'price': '¥59.00', 'author': None, 'publisher': None, 'isbn': '9787511142948', 'publish_date': '2020-04-01', 'page': None}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [book] INFO: {'name': '环境影响评价相关法律法规（2020年版）', 'cover': 'https://img.dushu.com/2020/11/12/10030769166588.jpg_200.jpg', 'price': '¥63.00', 'author': None, 'publisher': None, 'isbn': '9787511142931', 'publish_date': '2020-04-01', 'page': None}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [book] INFO: {'name': '农村电商知识读本（修订版）', 'cover': 'https://img.dushu.com/2020/11/12/1003579361096.jpg_200.jpg', 'price': '¥19.80', 'author': None, 'publisher': None, 'isbn': '9787553207568', 'publish_date': '2019-05-01', 'page': '70'}
+2020-11-16 14:58:01 [book] INFO: {'name': '电子商务数据分析实践', 'cover': 'https://img.dushu.com/2020/11/12/10040519712145.jpg_200.jpg', 'price': '¥53.00', 'author': None, 'publisher': None, 'isbn': '9787040474114', 'publish_date': '2020-03-01', 'page': None}
+2020-11-16 14:58:01 [book] INFO: {'name': '跟随利玛窦来中国', 'cover': 'https://img.dushu.com/2020/11/12/10070065256891.jpg_200.jpg', 'price': '¥99.00', 'author': None, 'publisher': None, 'isbn': '9787520359108', 'publish_date': '2020-05-01', 'page': '379'}
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:01 [dushu-project] ERROR: hahaha
+2020-11-16 14:58:02 [scrapy.extensions.feedexport] INFO: Stored csv feed (56 items) in: boo.csv
+2020-11-16 14:58:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 59765,
+ 'downloader/request_count': 168,
+ 'downloader/request_method_count/GET': 168,
+ 'downloader/response_bytes': 1767729,
+ 'downloader/response_count': 168,
+ 'downloader/response_status_count/200': 168,
+ 'dupefilter/filtered': 346,
+ 'file_count': 54,
+ 'file_status_count/downloaded': 54,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2020, 11, 16, 6, 58, 2, 244563),
+ 'item_scraped_count': 56,
+ 'log_count/ERROR': 36,
+ 'log_count/INFO': 65,
+ 'request_depth_max': 4,
+ 'response_received_count': 168,
+ 'scheduler/dequeued': 114,
+ 'scheduler/dequeued/memory': 114,
+ 'scheduler/enqueued': 1213,
+ 'scheduler/enqueued/memory': 1213,
+ 'start_time': datetime.datetime(2020, 11, 16, 6, 57, 54, 743397)}
+2020-11-16 14:58:02 [scrapy.core.engine] INFO: Spider closed (shutdown)

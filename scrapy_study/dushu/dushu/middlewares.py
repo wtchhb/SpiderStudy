@@ -4,8 +4,11 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 from scrapy import signals
+
+from dushu import settings
 
 
 class DushuSpiderMiddleware(object):
@@ -33,6 +36,8 @@ class DushuSpiderMiddleware(object):
 
         # Must return an iterable of Request, dict or Item objects.
         for i in result:
+            if isinstance(i, dict):
+                spider.logger.info(str(i))
             yield i
 
     def process_spider_exception(self, response, exception, spider):
@@ -53,6 +58,12 @@ class DushuSpiderMiddleware(object):
             yield r
 
     def spider_opened(self, spider):
+        # 删除dushu.log日志文件
+        log_file = os.path.join(settings.BASE_DIR, 'dushu.log')
+        # with open(log_file) as f:
+        #     f.write('')
+        # os.remove(log_file)
+
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
